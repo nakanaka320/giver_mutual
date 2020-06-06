@@ -13,3 +13,42 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "./reset";
+ @import "shared/header";
+ @import "shared/sidebar";
+
+ body {
+  background-color: white;
+}
+
+a:visited { color: #00c; }
+a:hover { color: #f00; }
+a img { border: none; }
+
+div#container {
+  padding-top: 5px;
+  width: 100%;
+  main {
+    float: left;
+    width: calc( 100% - 20% );
+    padding: 10px 10px 10px 0;
+  }
+}
+
+header {
+  border-top: 4px solid #6bb;
+  padding-top: 4px;
+}
+
+footer {
+  clear: both;
+  // font: 11px Verdana;
+  color: #888;
+  padding: 8px 0;
+  border-top: 4px solid #6bb;
+  text-align: center;
+  margin-bottom: 0.3em;
+
+}
+
