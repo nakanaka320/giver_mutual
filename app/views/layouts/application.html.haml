@@ -9,6 +9,10 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     #container
+      %header
+        = render "shared/header"
+      %sideber
+        = render "shared/sideber"
       %main
         = yield
       %footer

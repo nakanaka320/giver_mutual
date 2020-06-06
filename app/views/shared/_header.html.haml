@@ -1,0 +1,15 @@
+.main_tag_header
+  = image_tag "rails-logo.png", size: "272x48", alt: "Morning Glory"
+
+.main_manu_header
+  %ul
+    = link_to "TOP", :root
+    = link_to "ニュース", "#"
+    = link_to "ブログ", "#"
+    = link_to "チーム一覧", "#"
+-#  チーム一覧おリンクトゥにはクラスなどをつけてjavascuriptにてリンク一覧表示
+
+-# 今後実装予定 ログイン後はメンバーネームなどの表記が入るように
+    -# - if current_member
+    -#   = link_to "会員名簿", "#"
+    -#   = link_to "管理ページ", "#"
