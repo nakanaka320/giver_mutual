@@ -1,0 +1,4 @@
+.error_messages_box
+  = render "shared/errors",obj: @member
+.form_input_box
+  = f.text_field :user_name, autocomplete: "first_name_kanji", placeholder: "例) 中 光夫", class: "form-input-box"

@@ -1,0 +1,7 @@
+- @page_title = "会員の新規登録"
+%h1= @page_title
+.form_input
+  -# = form_with model:@member, url:  create_member_path(@user), method: :post, local: true do |f| #ここにrenderで変数を遅れるかあとで検証
+    = render "form", form: form
+    -# .form.input.box
+    -#   = f.text_field :user_name, autocomplete: "first_name_kanji", placeholder: "例) 中 光夫", class: "form-input-box"
