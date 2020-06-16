@@ -7,6 +7,10 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :members
+  resources :members do
+    collection do
+      post 'make_user' , to: 'members#make_user'
+    end
+  end
 
 end
