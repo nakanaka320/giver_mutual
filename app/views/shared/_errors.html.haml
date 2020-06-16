@@ -1,7 +1,7 @@
--# .error_messages
--#   - if obj.errors.present?
--#     #errors
--#       %h3 エラーがあります。
--#       %ul
--#         - obj.errors.full_messages.each do |msg|
--#           %li= msg
+.error_messages
+  - if obj.errors.present?
+    #errors
+      %h3 エラーがあります。
+      %ul
+        - obj.errors.full_messages.each do |msg|
+          %li= msg
