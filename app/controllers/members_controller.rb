@@ -9,9 +9,19 @@ class MembersController < ApplicationController
   end
 
   def make_user
-    @member = Member.new(member_params)
-    binding.pry
+    session[:user_name] = member_params[:user_name]
+    session[:email] = member_params[:email]
+    session[:password] = member_params[:password]
+    session[:password_confirmation] = member_params[:password_confirmation]
+    @member = Member.new(
+      user_name: session[:user_name],
+      email: session[:email],
+      password: session[:password],
+      password_confirmation: session[:password_confirmation],
+    )
+    # binding.pry
     if @member.save
+      # sign_in(@member)　のちに実装
       redirect_to @member
     else 
       render :new

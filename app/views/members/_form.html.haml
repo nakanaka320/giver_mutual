@@ -1,12 +1,23 @@
 .error_messages_box
   = render "shared/errors",obj: @member
-.form_input_box
-  .form_input_box_name
-    = f.text_field :user_name, autocomplete: "first_name_kanji", placeholder: "例) 中 光夫", class: "form-input-box"
-  .form_input_box_email
-    = f.email_field :email, autofocus: true, placeholder: "例) PC・携帯どちらでも可"
-  .form_input_box_password
-    = f.password_field :password, autocomplete: "new-password", placeholder: "6文字以上"
-  .form_input_box_password_confirmation
-    = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "6文字以上"
-  = f.submit "登録"
+%table.form_input_box
+  %tr.form_input_box_content
+    %th.form_input_box_label
+      = f.label :user_name
+    %td.form_input_box_name
+      = f.text_field :user_name, autocomplete: "first_name_kanji", placeholder: "例) 中 光夫", class: "form-input-box"
+  %tr.form_input_box_content
+    %th.form_input_box_label
+      = f.label :email
+    %td.form_input_box_email
+      = f.email_field :email, autofocus: true, placeholder: "例) PC・携帯どちらでも可"
+  %tr.form_input_box_content
+    %th.form_input_box_label
+      = f.label :password
+    %td.form_input_box_password
+      = f.password_field :password, autocomplete: "new-password", placeholder: "6文字以上"
+  %tr.form_input_box_content
+    %th.form_input_box_label
+      = f.label :確認用
+    %td.form_input_box_password_confirmation
+      = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "6文字以上"
