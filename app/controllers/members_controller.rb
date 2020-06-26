@@ -1,7 +1,7 @@
 class MembersController < ApplicationController
 
   def index
-    # @members = Member.order("name")
+    @members = Member.order("user_name")
   end
 
   def new
@@ -19,9 +19,8 @@ class MembersController < ApplicationController
       password: session[:password],
       password_confirmation: session[:password_confirmation],
     )
-    # binding.pry
     if @member.save
-      # sign_in(@member)　のちに実装
+      sign_in(@member)
       redirect_to @member
     else 
       render :new
@@ -29,19 +28,29 @@ class MembersController < ApplicationController
   end
 
   def show
-   puts "あほほ" # @member = Member.find(params[:make_user)
-  end
-
-  def edit
     @member = Member.find(params[:id])
   end
-  
-  def update
 
-  end
+  #今後実装　編集
+  # def edit
+  # end
+
+  # def update
+  #   if current_member.update(member_params)
+  #     redirect_to root_path
+  #   else
+  #     render :edit
+  #   end
+  # end
   
   def destroy
-    
+    @member = Member.find(params[:id])
+    @member.destroy
+    redirect_to :members, notice: "会員を削除しました"
+  end
+
+  def sign_in_form
+    @member = Member.new
   end
 
   private

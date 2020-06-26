@@ -1,7 +1,20 @@
+.sidebar_registration{
+  width: 250px;
+  background-color: #e8ffff;
+  padding: 5px;
+  display: flex;
+  .sidebar_registration_name_box{
+    padding: 0px 60px 0px 10px;
+  }
+  .sidebar_registration_rogout{
+    
+  }
+}
+
 .sidebar_content {
   float: left;
   width: 250px;
   background-color: #e8ffff;
   padding: 5px;
-  font-size: 86%;
+  font-size: 150%;
 }
