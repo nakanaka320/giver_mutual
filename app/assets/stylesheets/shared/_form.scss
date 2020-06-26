@@ -1,14 +1,13 @@
 table{
   font-size: 90%;
-  width: 100%;
+  border-collapse: separate;
+  border-spacing: 2px;
   tr{
     font-size: 150%;
     th{
       background-color: #499;
-      color: white;
       font-weight: normal;
       text-align: right;
-      padding: 4px;
     }
     td{
       background-color: #cee;

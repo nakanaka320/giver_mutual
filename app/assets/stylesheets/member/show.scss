@@ -1,0 +1,25 @@
+.attr_index{
+  table{
+    font-size: 90%;
+    border-collapse: separate;
+    border-spacing: 2px;
+    tr{
+      font-size: 150%;
+      th{
+        background-color: #499;
+        font-weight: normal;
+        text-align: right;
+      }
+      td{
+        background-color: #cee;
+        padding: 4px;
+      }
+    }
+  }
+}
+
+.toolbar {
+  padding: 15px 0;
+  font-size: 90%;
+  text-align: right;
+}

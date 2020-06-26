@@ -14,7 +14,7 @@
  *= require_self
  */
 
- @import "./reset";
+//  @import "./reset";
  @import "shared/header";
  @import "shared/sidebar";
 
@@ -26,14 +26,16 @@ a:visited { color: #00c; }
 a:hover { color: #f00; }
 a img { border: none; }
 
-div#container {
+.container {
   padding-top: 5px;
   width: 100%;
+  margin: 0 auto;
   main {
     float: left;
-    width: calc( 100% - 20% );
+    width: 530px;
     padding: 10px 10px 10px 0;
   }
+  
 }
 
 header {
@@ -41,9 +43,16 @@ header {
   padding-top: 4px;
 }
 
+h1 {
+  color: #99d;
+  font-weight: bold;
+  font-size: 120%;
+  margin-bottom: 0.5em;
+  border-bottom: 1px solid #ccf;
+}
+
 footer {
   clear: both;
-  // font: 11px Verdana;
   color: #888;
   padding: 8px 0;
   border-top: 4px solid #6bb;

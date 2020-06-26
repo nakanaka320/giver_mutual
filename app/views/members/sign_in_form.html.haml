@@ -1,0 +1,7 @@
+- @page_title = "ログイン"
+%h1= @page_title
+.form_input
+  = form_with model:@member, url: member_session_path, method: :post, local: true do |f|
+    = render "form", f: f
+    = f.submit "完了"
+    -# destroy_member_session_path, method: :delete, class: 'btn'

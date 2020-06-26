@@ -1,3 +1,11 @@
 - @page_title = "会員の詳細"
 %h1= @page_title
+.attr_index
+  %table.attr
+  %tr
+    %th ユーザー名
+    %td= @member.user_name
+  %tr
+    %th メールアドレス
+    %td= @member.email
 .toolbar= link_to "編集", edit_member_path
