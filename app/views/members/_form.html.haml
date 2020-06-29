@@ -21,3 +21,8 @@
       = f.label :再度パスワード
     %td.form_input_box_password_confirmation
       = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "6文字以上"
+  %tr.form_input_box_content
+    %th.form_input_box_label
+      = f.label :管理者権限
+    %td.form_input_box_adiministrator
+      = f.check_box :administrator
