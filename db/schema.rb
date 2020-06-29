@@ -13,17 +13,20 @@
 ActiveRecord::Schema.define(version: 2020_06_07_120347) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "comment", null: false
-    t.bigint "member_id", null: false
+    t.text "content", null: false
+    t.bigint "member_id"
+    t.bigint "room_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["member_id"], name: "index_comments_on_member_id"
+    t.index ["room_id"], name: "index_comments_on_room_id"
   end
 
   create_table "members", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "user_name", null: false
+    t.boolean "administrator", default: false, null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -34,6 +37,7 @@ ActiveRecord::Schema.define(version: 2020_06_07_120347) do
   end
 
   create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -50,4 +54,5 @@ ActiveRecord::Schema.define(version: 2020_06_07_120347) do
   end
 
   add_foreign_key "comments", "members"
+  add_foreign_key "comments", "rooms"
 end

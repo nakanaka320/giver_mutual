@@ -4,4 +4,4 @@
   = form_with model:@member, url: member_session_path, method: :post, local: true do |f|
     = render "form", f: f
     = f.submit "完了"
-    -# destroy_member_session_path, method: :delete, class: 'btn'
+-# 入力失敗した場合に用意されているビューに変移してしまうため、deviseのsessionのビューを作成そして修正を、sign_inアクションへ
