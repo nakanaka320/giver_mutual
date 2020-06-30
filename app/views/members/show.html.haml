@@ -5,7 +5,16 @@
   %tr
     %th ユーザー名
     %td= @member.user_name
+    ｜
   %tr
     %th メールアドレス
     %td= @member.email
+    ｜
+  %tr
+    %th 所属チーム
+    %td= Room.find(@member.room_id).name
+    ｜
+  %tr
+    %th 管理者
+    %td= @member.administrator? ? "○" : "－"
 .toolbar= link_to "編集", edit_member_path

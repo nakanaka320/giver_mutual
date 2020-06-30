@@ -4,7 +4,7 @@ class Member < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :rooms
+  belongs_to :room
   has_many :tasks
   has_many :comments,dependent: :destroy
 

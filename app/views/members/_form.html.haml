@@ -26,3 +26,61 @@
       = f.label :管理者権限
     %td.form_input_box_adiministrator
       = f.check_box :administrator
+  %tr.form_input_box_content
+    %th.form_input_box_label
+      = f.label :所属チーム
+    %td.form_input_box_room_id
+      = f.collection_select :room_id, Room.all, :id, :name, {prompt: "--"}, {class: "select-wrap__holder"}
+
+      -# = f.select :room_id
+      -# %select{name: :room_id}
+      -#   %option{value: :"0"}
+      -#     整形
+      -#   %option{value: :"1"}
+      -#     脳血管
+      -#   %option{value: :"2"}
+      -#     内部
+      -#   %option{value: :"3"}
+      -#     急性期OT
+      -#   %option{value: :"4"}
+      -#     回復期OT
+      -#   %option{value: :"5"}
+      -#     急性期ST
+      -#   %option{value: :"6"}
+      -#     回復期ST
+      -#   %option{value: :"7"}
+      -#     回復期Aチーム
+      -#   %option{value: :"8"}
+      -#     回復期Bチーム
+      -#   %option{value: :"9"}
+      -#     管理者
+
+      -# = f.select :room_id, {'整形', '脳血管', '内部','急性期OT', '回復期OT', '急性期ST', '回復期ST', '回復期A', '回復期B', '管理者'}
+      -# %select.search-form__keyword
+      -#   %option.search-form__keyword___value
+      -#     整形
+      -#   %option.search-form__keyword___value
+      -#     脳血管
+      -#   %option.search-form__keyword___value
+      -#     内部
+      -#   %option.search-form__keyword___value
+      -#     地域包括
+      -#   %option.search-form__keyword___value
+      -#     急性期OT
+      -#   %option.search-form__keyword___value
+      -#     回復期OT
+      -#   %option.search-form__keyword___value
+      -#     急性期ST
+      -#   %option.search-form__keyword___value
+      -#     回復期ST
+      -#   %option.search-form__keyword___value
+      -#     回復期Aチーム
+      -#   %option.search-form__keyword___value
+      -#     回復期Bチーム
+      -#   %option.search-form__keyword___value
+      -#     管理者
+  -# %tr.form_input_box_content
+  -#   %th.form_input_box_label
+  -#     = f.label :所属チーム
+  -#   %td.form_input_box_adiministrator
+  -#     = f.check_box :room_id
