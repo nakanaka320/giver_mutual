@@ -33,7 +33,7 @@ class MembersController < ApplicationController
     @member = Member.find(params[:id])
   end
 
-  #今後実装　編集
+  # 今後実装　編集
   # def edit
   # end
 

@@ -7,6 +7,7 @@ class Member < ApplicationRecord
   belongs_to :room
   has_many :tasks
   has_many :comments,dependent: :destroy
+  has_many :messages
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :user_name, presence: true, format: {with: /\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々])+\z/}
