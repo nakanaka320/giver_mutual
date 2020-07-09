@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_07_120347) do
+ActiveRecord::Schema.define(version: 2020_07_04_211636) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content", null: false
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2020_06_07_120347) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "user_name", null: false
+    t.bigint "room_id"
     t.boolean "administrator", default: false, null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -34,10 +35,22 @@ ActiveRecord::Schema.define(version: 2020_06_07_120347) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_members_on_email", unique: true
     t.index ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true
+    t.index ["room_id"], name: "index_members_on_room_id"
+  end
+
+  create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "content"
+    t.bigint "room_id"
+    t.bigint "member_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["member_id"], name: "index_messages_on_member_id"
+    t.index ["room_id"], name: "index_messages_on_room_id"
   end
 
   create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
+    t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -55,4 +68,7 @@ ActiveRecord::Schema.define(version: 2020_06_07_120347) do
 
   add_foreign_key "comments", "members"
   add_foreign_key "comments", "rooms"
+  add_foreign_key "members", "rooms"
+  add_foreign_key "messages", "members"
+  add_foreign_key "messages", "rooms"
 end

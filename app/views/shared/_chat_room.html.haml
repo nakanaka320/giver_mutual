@@ -1,0 +1,10 @@
+.chat_message_index
+  - if current_member
+    .chat
+      %h1= @page_title
+      = link_to "更新",room_messages_path
+    .chat_message_index_list
+      = @messages
+  - else
+    .main_menu_reject
+      チームに所属またはログインしてください

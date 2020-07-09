@@ -13,11 +13,13 @@ class MembersController < ApplicationController
     session[:email] = member_params[:email]
     session[:password] = member_params[:password]
     session[:password_confirmation] = member_params[:password_confirmation]
+    session[:room_id] = member_params[:room_id]
     @member = Member.new(
       user_name: session[:user_name],
       email: session[:email],
       password: session[:password],
       password_confirmation: session[:password_confirmation],
+      room_id: session[:room_id]
     )
     if @member.save
       sign_in(@member)
@@ -31,7 +33,7 @@ class MembersController < ApplicationController
     @member = Member.find(params[:id])
   end
 
-  #今後実装　編集
+  # 今後実装　編集
   # def edit
   # end
 
@@ -59,7 +61,8 @@ class MembersController < ApplicationController
       :user_name,
       :password,
       :password_confirmation,
-      :email )
+      :email,
+      :room_id )
   end
 
 end

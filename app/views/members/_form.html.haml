@@ -26,3 +26,8 @@
       = f.label :管理者権限
     %td.form_input_box_adiministrator
       = f.check_box :administrator
+  %tr.form_input_box_content
+    %th.form_input_box_label
+      = f.label :所属チーム
+    %td.form_input_box_room_id
+      = f.collection_select :room_id, Room.all, :id, :name, {prompt: "--"}, {class: "input_box_room_id"}

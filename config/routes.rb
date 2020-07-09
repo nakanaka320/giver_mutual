@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
   devise_for :members
-  root "mainmenu#index"
-  resources :mainmenu do
+  root "rooms#index"
+  resource :room do
+    resources :messages do
+      post 'make_message', to:'messages#make_message'
+    end
     collection do
-      get 'about' 
+      get 'about'
     end
   end
 

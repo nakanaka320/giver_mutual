@@ -1,0 +1,27 @@
+.chat_message_input_form{
+  height: 100px;
+  background:#DDDDDD;
+  box-sizing: border-box;
+  padding: 20px 50px 20px 20px;
+  .chat_message_input_form_box{
+    display: flex;
+    color: #333333;
+    height: 50px;
+    width: 100%;
+    position: relative;
+    .input-box{
+      width: 100%;
+      height: 50px;
+      position: absolute;
+    }
+    }
+    .chat_message_input_send{
+      margin-left: 15px;
+      padding: 0 30px;
+      width: calc(100%w - 45px);
+      font-size: 16px;
+      background: #38AEF0;
+      color: #FFFFFF;
+      height: 52px;
+  }
+}
