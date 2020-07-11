@@ -1,9 +1,13 @@
 - @page_title = "チャット一覧"
 .chat_room
   = render 'shared/chat_room'
+  .chat_message_index_list
+  - @room.messages.each do |message|
+    .chat_message_index_list_index
+      = message.content
   .chat_message_input
     .chat_message_input_form
-      = form_with model: [@room,@messages], url: room_message_make_message_path(current_member.id), method: :post, local: true do |f|
+      = form_with model: [@room,@message], url: room_message_make_message_path(current_member.id), method: :post, local: true do |f|
         .chat_message_input_form_box
           = f.text_field :content, class: 'chat_message_input_form_box', placeholder: 'type a message'
           = f.submit 'Send', class: 'chat_message_input_send'
