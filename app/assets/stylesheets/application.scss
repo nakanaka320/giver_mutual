@@ -17,7 +17,9 @@
 //  @import "./reset";
  @import "shared/header";
  @import "shared/sidebar";
-
+//  @import "bootstrap";
+ @import "task/index.scss";
+ 
  body {
   background-color: white;
 }

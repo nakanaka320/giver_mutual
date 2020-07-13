@@ -1,0 +1,36 @@
+%nav.navbar.navbar-light{style: :"background-color: #e3f2fd;" }
+  %a.navbar-brand 登録済みタスク一覧
+
+.form-wrapper
+  = form_for @task, html: {class: 'form-group'} do |f|
+
+    = f.label :kind
+    = f.select :kind, Task.kinds_i18n.invert, {}, class: 'form-control', placeholder: 0
+
+    = f.label :title
+    = f.text_field :title, class: 'form-control', placeholder: "ここにタスク名を入力してください"
+
+    = f.label :content
+    = f.text_area :content, class: 'form-control', placeholder: "ここにタスクの詳細を入力してください"
+
+    = f.label :start_at
+    = f.datetime_select :start_at, ampm: :true, minute_step: 15, default: (Time.zone.now + 1.days), class: 'form-control'
+
+    = f.label :finish_at
+    = f.datetime_select :finish_at, ampm: :true, minute_step: 15, default: (Time.zone.now + 2.days), class: 'form-control'
+
+    = f.submit '作成する', class: "btn btn-primary"
+
+.table-responsive
+  %h4.r-title-label{style: 'display: inline-block; margin-right: 20px; '}
+  %table.table.table-striped.b-t.b-light
+    %thead
+      %tr
+        %th 種類
+        %th タスクの名前
+        %th タスクの内容
+        %th 開始時間
+        %th 終了時間
+        %th 状態
+    %tbody
+      = render @tasks
