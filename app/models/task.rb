@@ -1,7 +1,8 @@
 class Task < ApplicationRecord
   belongs_to :member
-  belongs_to :room,dependent: :destroy
-  has_many :comments,dependent: :destroy
+  # belongs_to :room,dependent: :destroy
+
+  # has_many :comments,dependent: :destroy
 
   enum kind: {individual: 0, work: 1, others: 2}
 

@@ -1,4 +1,4 @@
-%tr
+%tr.task_status_index
   %td
     = task.kind_i18n
   %td
@@ -15,4 +15,4 @@
     - else
       未完了
       %br
-      = link_to "完了にする", task_path(task), method: :patch, class: "btn btn-primary "
+      = link_to "完了にする", task_path(task), method: :patch

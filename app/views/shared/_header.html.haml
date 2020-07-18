@@ -1,13 +1,13 @@
-.main_tag_header
-  = image_tag "rails-logo.png", size: "272x48", alt: "ああああ"
-  
+%header
+  .main_tag_header
+    = image_tag "rails-logo.png", size: "272x48", alt: "ああああ"
 
-.main_manu_header
-  %ul
-    = link_to "TOP", :root
-    = link_to "ニュース", "#"
-    = link_to "業務登録", :tasks
-    = link_to "会員管理", :members
+  .main_manu_header
+    %ul
+      = link_to "TOP", :root
+      = link_to "ニュース", "#"
+      = link_to "業務登録", :tasks
+      = link_to "会員管理", :members
 -#  チーム一覧おリンクトゥにはクラスなどをつけてjavascuriptにてリンク一覧表示
 
 -# 今後実装予定 ログイン後はメンバーネームなどの表記が入るように

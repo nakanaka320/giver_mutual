@@ -1,25 +1,26 @@
 -# ここに管理者権限の人は記事を投稿できるように　今は試し
-.sidebar
-  .sidebar_registration
-    - if current_member
-      .sidebar_registration_name_box
-        = current_member.user_name
-        -# = link_to current_member.user_name, member_path(member.id)
-      .sidebar_registration_rogout
-        = link_to "ログアウト", destroy_member_session_path, method: :delete, data: { confirm: "ログアウトしますか？" } |
-    - else
-      .sidebar_registration_login
-        = link_to "ログイン", sign_in_form_members_path
-  .sidebar_content
-    %h2 全体の業務連絡
-    %ul
-      = 5.times do |i|
-        %li
-          = link_to "ニュースの見出し", "#"
+%sideber
+  .sidebar
+    .sidebar_registration
+      - if current_member
+        .sidebar_registration_name_box
+          = current_member.user_name
+          -# = link_to current_member.user_name, member_path(member.id)
+        .sidebar_registration_rogout
+          = link_to "ログアウト", destroy_member_session_path, method: :delete, data: { confirm: "ログアウトしますか？" } |
+      - else
+        .sidebar_registration_login
+          = link_to "ログイン", sign_in_form_members_path
+    .sidebar_content
+      %h2 全体の業務連絡
       %ul
-        %h2 チームニュース
+        = 5.times do |i|
+          %li
+            = link_to "ニュースの見出し", "#"
         %ul
-          = 5.times do |i|
-            %li
-              = link_to "ブログの見出し", "#"
+          %h2 チームニュース
           %ul
+            = 5.times do |i|
+              %li
+                = link_to "ブログの見出し", "#"
+            %ul

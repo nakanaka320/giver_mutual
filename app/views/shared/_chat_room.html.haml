@@ -1,8 +1,6 @@
 %h1= @page_title
-.chat_message_index
-  - if current_member
-    .chat
-      = link_to "更新",room_messages_path
-  - else
-    .main_menu_reject
-      チームに所属またはログインしてください
+- if current_member
+  = link_to "更新",room_messages_path
+- else
+  .main_menu_reject
+    チームに所属またはログインしてください

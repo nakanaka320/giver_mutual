@@ -1,0 +1,13 @@
+.chat_message_index{
+  .chat_message_index_list{
+    height: calc(100vh - 420px);
+    overflow: scroll;
+  }
+  .chat_message_input{
+    .chat_message_input_form{
+      .chat_message_input_form_box{
+        width: 83%;
+      }
+    }
+  }
+}
