@@ -1,29 +1,31 @@
-%nav.navbar.navbar-light{style: :"background-color: #e3f2fd;" }
-  %a.navbar-brand 登録済みタスク一覧
+= render "shared/header"
+.task_title{style: :"background-color: #e3f2fd;" }
+  .task_title_index 
+    登録済みタスク一覧
 
-.form-wrapper
-  = form_for @task, html: {class: 'form-group'} do |f|
+.form_wrapper
+  = form_for @task, url: task_create_tasks_path, html: {class: 'form_group'} do |f|
 
     = f.label :kind
-    = f.select :kind, Task.kinds_i18n.invert, {}, class: 'form-control', placeholder: 0
+    = f.select :kind, Task.kinds_i18n.invert, {}, class: 'form_control', placeholder: 0
 
     = f.label :title
-    = f.text_field :title, class: 'form-control', placeholder: "ここにタスク名を入力してください"
+    = f.text_field :title, class: 'form_control', placeholder: "ここにタスク名を入力してください"
 
     = f.label :content
-    = f.text_area :content, class: 'form-control', placeholder: "ここにタスクの詳細を入力してください"
+    = f.text_area :content, class: 'form_control', placeholder: "ここにタスクの詳細を入力してください"
 
     = f.label :start_at
-    = f.datetime_select :start_at, ampm: :true, minute_step: 15, default: (Time.zone.now + 1.days), class: 'form-control'
+    = f.datetime_select :start_at, ampm: :true, minute_step: 15, default: (Time.zone.now + 1.days), class: 'form_control'
 
     = f.label :finish_at
-    = f.datetime_select :finish_at, ampm: :true, minute_step: 15, default: (Time.zone.now + 2.days), class: 'form-control'
+    = f.datetime_select :finish_at, ampm: :true, minute_step: 15, default: (Time.zone.now + 2.days), class: 'form_control'
 
-    = f.submit '作成する', class: "btn btn-primary"
+    = f.submit '作成する'
 
-.table-responsive
-  %h4.r-title-label{style: 'display: inline-block; margin-right: 20px; '}
-  %table.table.table-striped.b-t.b-light
+.task_title_table
+  %h4.task-title-label
+  %table.task_title_data
     %thead
       %tr
         %th 種類
@@ -32,5 +34,6 @@
         %th 開始時間
         %th 終了時間
         %th 状態
-    %tbody
+    %tbody.task_status
       = render @tasks
+= render "shared/footer"

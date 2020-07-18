@@ -62,8 +62,10 @@ ActiveRecord::Schema.define(version: 2020_07_04_211636) do
     t.datetime "finish_at", null: false
     t.integer "kind", null: false
     t.boolean "finished", default: false, null: false
+    t.bigint "member_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["member_id"], name: "index_tasks_on_member_id"
   end
 
   add_foreign_key "comments", "members"
@@ -71,4 +73,5 @@ ActiveRecord::Schema.define(version: 2020_07_04_211636) do
   add_foreign_key "members", "rooms"
   add_foreign_key "messages", "members"
   add_foreign_key "messages", "rooms"
+  add_foreign_key "tasks", "members"
 end

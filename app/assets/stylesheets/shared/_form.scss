@@ -1,15 +1,15 @@
-table{
+.form_input_box{
   font-size: 90%;
   border-collapse: separate;
   border-spacing: 2px;
-  tr{
+  .form_input_box_content{
     font-size: 150%;
-    th{
+    .form_input_box_label{
       background-color: #499;
       font-weight: normal;
       text-align: right;
     }
-    td{
+    .form_input_box_column{
       background-color: #cee;
       padding: 4px;
     }

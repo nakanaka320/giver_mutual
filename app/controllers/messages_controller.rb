@@ -5,6 +5,8 @@ class MessagesController < ApplicationController
     @member = Member.new(id: :current_member)
     @message = Message.new
     @messages = @room.messages.includes(:member)
+    @task = Task.new
+    @tasks = Task.incoming.order(start_at: :asc)
   end
 
   def make_message
@@ -17,6 +19,11 @@ class MessagesController < ApplicationController
       render :index
     end
   end
+
+  # def task_index
+  #   @task = Task.new
+  #   @tasks = Task.incoming.order(start_at: :asc)
+  # end
 
   private
 

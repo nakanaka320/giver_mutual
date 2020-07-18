@@ -1,0 +1,15 @@
+.task_status{
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+  .task_status_index{
+    td{
+      padding: 0.75rem;
+      vertical-align: top;
+      border-top: 1px solid #dee2e6;
+    }
+  }
+    tr:nth-child(odd){
+    background-color: rgba(0, 0, 0, 0.05);
+    }
+}

@@ -17,6 +17,10 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :tasks
+  resources :tasks do
+    collection do
+      post 'task_create' , to: 'tasks#task_create'
+    end
+  end
 
 end
