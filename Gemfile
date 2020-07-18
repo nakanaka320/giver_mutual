@@ -66,3 +66,7 @@ gem 'devise'
 gem 'enum_help'
 gem 'bootstrap'
 gem 'rails-i18n'
+
+group :production do
+  gem 'unicorn', '5.4.1'
+end
