@@ -2,6 +2,43 @@
   .chat_message_index_list{
     height: calc(100vh - 420px);
     overflow: scroll;
+    .chat_message_index_list_index{
+      .chat_message_index_list_value{
+        padding: 10px 0px 10px 10px;
+        margin-bottom: 10px;
+        display: flex;
+        .chat_message_index_list_index_name{
+          font-size: 25px;
+        }
+        .chat_message_index_list_index_time{
+          font-size: 16px;
+          padding: 10px;
+        }
+      }
+      .chat_message_index_list_index_content{
+        padding: 10px 0px 10px 10px;
+        font-size: 20px;
+      }
+    }
+    .chat_message_index_list_index:nth-child(odd){
+      background-color: rgba(0, 0, 0, 0.05);
+      .chat_message_index_list_value{
+        padding: 10px 0px 10px 10px;
+        margin-bottom: 10px;
+        display: flex;
+        .chat_message_index_list_index_name{
+          font-size: 25px;
+        }
+        .chat_message_index_list_index_time{
+          font-size: 16px;
+          padding: 10px;
+        }
+      }
+      .chat_message_index_list_index_content{
+        padding: 10px 0px 10px 10px;
+        font-size: 20px;
+      }
+    }
   }
   .chat_message_input{
     .chat_message_input_form{

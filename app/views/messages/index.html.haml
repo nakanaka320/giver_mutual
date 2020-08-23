@@ -7,7 +7,13 @@
     .chat_message_index_list
       - @room.messages.each do |message|
         .chat_message_index_list_index
-          = message.content
+          .chat_message_index_list_value
+            .chat_message_index_list_index_name
+              = message.member.user_name
+            .chat_message_index_list_index_time
+              = message.created_at.strftime("%Y/%m/%d %H:%M")
+          .chat_message_index_list_index_content
+            = message.content
     .chat_message_input
       .chat_message_input_form
         = form_with model: [@room,@message], url: room_message_make_message_path(current_member.id), method: :post, local: true do |f|
