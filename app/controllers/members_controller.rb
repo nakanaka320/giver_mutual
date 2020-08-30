@@ -13,12 +13,14 @@ class MembersController < ApplicationController
     session[:email] = member_params[:email]
     session[:password] = member_params[:password]
     session[:password_confirmation] = member_params[:password_confirmation]
+    session[:administrator] = member_params[:administrator]
     session[:room_id] = member_params[:room_id]
     @member = Member.new(
       user_name: session[:user_name],
       email: session[:email],
       password: session[:password],
       password_confirmation: session[:password_confirmation],
+      administrator: session[:administrator],
       room_id: session[:room_id]
     )
     if @member.save
@@ -62,6 +64,7 @@ class MembersController < ApplicationController
       :password,
       :password_confirmation,
       :email,
+      :administrator,
       :room_id )
   end
 
