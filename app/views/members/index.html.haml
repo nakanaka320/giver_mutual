@@ -1,4 +1,4 @@
-= render "shared/header"
+-# = render "shared/header"
 = render "shared/sideber"
 - @page_title = "会員名簿"
 %h1= @page_title
@@ -13,4 +13,4 @@
         |
         = link_to "削除", member, method: :delete, data: { confirm: "本当に削除しますか?" }
   - else
-  %p 会員情報がありません。
+    %p 会員情報がありません。

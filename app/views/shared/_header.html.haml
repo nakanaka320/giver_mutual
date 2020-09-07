@@ -1,13 +1,22 @@
 %header
-  .main_tag_header
-    = image_tag "rails-logo.png", size: "272x48"
-
-  .main_manu_header
-    %ul
-      = link_to "TOP", :root
-      = link_to "ニュース", "#"
-      = link_to "業務登録", :tasks
-      = link_to "会員管理", :members
+  .headbar
+    .headbar_registration
+      - if current_member
+        .headbar_registration_name_box
+          = current_member.user_name
+          -# = link_to current_member.user_name, member_path(member.id)
+        .headbar_registration_rogout
+          = link_to "ログアウト", destroy_member_session_path, method: :delete, data: { confirm: "ログアウトしますか？" } |
+      - else
+        .headbar_registration_login
+          = link_to "ログイン", sign_in_form_members_path
+    .headbar_manu
+      %ul
+        = link_to "TOP", :root
+        = link_to "ニュース", "#"
+        = link_to "業務登録", :tasks
+        = link_to "会員管理", :members
+    -# = image_tag "rails-logo.png", size: "272x48"
 -#  チーム一覧おリンクトゥにはクラスなどをつけてjavascuriptにてリンク一覧表示
 
 -# 今後実装予定 ログイン後はメンバーネームなどの表記が入るように
