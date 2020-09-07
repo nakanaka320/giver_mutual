@@ -4,7 +4,6 @@
       - if current_member
         .headbar_registration_name_box
           = current_member.user_name
-          -# = link_to current_member.user_name, member_path(member.id)
         .headbar_registration_rogout
           = link_to "ログアウト", destroy_member_session_path, method: :delete, data: { confirm: "ログアウトしますか？" } |
       - else
@@ -16,10 +15,4 @@
         = link_to "ニュース", "#"
         = link_to "業務登録", :tasks
         = link_to "会員管理", :members
-    -# = image_tag "rails-logo.png", size: "272x48"
 -#  チーム一覧おリンクトゥにはクラスなどをつけてjavascuriptにてリンク一覧表示
-
--# 今後実装予定 ログイン後はメンバーネームなどの表記が入るように
-    -# - if current_member
-    -#   = link_to "会員名簿", "#"
-    -#   = link_to "管理ページ", "#"
