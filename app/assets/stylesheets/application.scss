@@ -34,11 +34,12 @@ a img { border: none; }
   max-width: 100%;
   margin: 0 auto;
   .main {
-    // float: left;
     width: 100%;
     padding: 10px 10px 10px 0;
     background: linear-gradient(180deg, rgb(240, 240, 243), rgba(18, 39, 230, 0.308)) ,url('bg-3.jpg') fixed;
     background-size: cover;
+    .main_container{
+    }
   }
   
 }
