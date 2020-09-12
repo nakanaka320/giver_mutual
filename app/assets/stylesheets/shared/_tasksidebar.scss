@@ -1,7 +1,27 @@
-// .taskbar{
-//   position: fixed;
-//   right: 0px;
-//   height: 800px;
-//   width: 20%;
-//   background-color: rgba(0,0,0,0.8);
-// }
+.taskbar{
+  position: fixed;
+  right: 0px;
+  height: 800px;
+  width: 760px;
+  z-index: 10;
+  right: -760px;
+  background-color: rgba(52,87,117,0.4);
+  #open_close{
+    background-color: rgba(0,0,0,0.5);
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: -51px;
+    width: 52px;
+    height: 132px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    transform: rotate(180deg);
+  }
+  .taskbar_member{
+    font-size: 20px;
+    color: rgb(59, 59, 224);
+  }
+  
+}

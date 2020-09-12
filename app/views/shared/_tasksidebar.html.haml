@@ -1,2 +1,7 @@
 .taskbar
-  .taskbar_
+  .taskbar_member
+    - @room.members.each do |member|
+      .taskbar_member_index
+        = member.user_name
+  %button#open_close
+    = image_tag "btn_open.png"

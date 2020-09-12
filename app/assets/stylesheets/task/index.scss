@@ -12,6 +12,7 @@
 
 .form_wrapper {
   padding: 20px;
+  color: white;
   .form_group{
     margin-bottom: 1rem;
     input{
@@ -26,6 +27,18 @@
     .form_control{
       display: block;
       width: 100%;
+      height: calc(2.25rem + 2px);
+      padding: 0.375rem 0.75rem;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #495057;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid #ced4da;
+      border-radius: 0.25rem;
+    }
+    .form_control2{
+      width: 5%;
       height: calc(2.25rem + 2px);
       padding: 0.375rem 0.75rem;
       font-size: 1rem;
