@@ -1,7 +1,11 @@
 .taskbar
   .taskbar_member
     - @room.members.each do |member|
-      .taskbar_member_index
-        = member.user_name
+      .taskbar_content
+        .taskbar_member_index
+          = member.user_name
+        .taskbar_piechart
+          テスト文字
+          %canvas#myChart
   %button#open_close
     = image_tag "btn_open.png"

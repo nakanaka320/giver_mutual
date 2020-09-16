@@ -14,12 +14,10 @@
  *= require_self
  */
 
-//  @import "./reset";
  @import "config/colors";
  @import "shared/header";
  @import "shared/sidebar";
  @import "modules/flash";
-//  @import "task/index.scss";
  
  body {
    background-color: white;
