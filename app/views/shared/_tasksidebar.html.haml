@@ -1,11 +1,12 @@
 .taskbar
   .taskbar_member
-    - @room.members.each do |member|
+    - @room.members.each_with_index do |member,index|
       .taskbar_content
         .taskbar_member_index
           = member.user_name
         .taskbar_piechart
           テスト文字
-          %canvas#myChart
+          -# %canvas{id: "myChart#{member.id}",data: {member: {id: member.id}}}
+          %canvas{id: "myChart#{index}",class: "chart", data: {id: member.id}}
   %button#open_close
     = image_tag "btn_open.png"

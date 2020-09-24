@@ -9,8 +9,14 @@ $(document).on('click', '#open_close', function(){
               $aside.stop(true).animate({right: '-200px'}, duration, 'easeOutBack');
               $asidButton.find('img').attr('src', '/assets/btn_close.png');
 // パイチャートの表示
-              new Chart(document.querySelectorAll("#myChart"), {
-                type: "pie",　　　　　
+              var NodeMyChart = document.querySelectorAll(".chart");
+              var HashMyChart = Array.from(NodeMyChart);
+              var count = 0;
+              var IndexChart = "#myChart";
+
+                HashMyChart.forEach(function(item,index){
+                new Chart(document.querySelector(IndexChart+count), {
+                type: "pie",
                 data: {
                   labels: ["仕事", "私用", "その他"],
                   datasets: [
@@ -25,6 +31,8 @@ $(document).on('click', '#open_close', function(){
                   ]
                 }
               });
+            count++;
+            });
 
           }else{
               $aside.stop(true).animate({right: '-1200px'}, duration, 'easeInBack');
@@ -32,4 +40,5 @@ $(document).on('click', '#open_close', function(){
           };
       });
   });
+
 
