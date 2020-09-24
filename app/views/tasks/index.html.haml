@@ -1,4 +1,3 @@
--# = render "shared/header"
 .task_title{style: :"background-color: #e3f2fd;" }
   .task_title_index 
     登録済みタスク一覧
@@ -6,20 +5,23 @@
 .form_wrapper
   = form_for @task, url: task_create_tasks_path, html: {class: 'form_group'} do |f|
 
-    = f.label :kind
+    = f.label :種類
     = f.select :kind, Task.kinds_i18n.invert, {}, class: 'form_control', placeholder: 0
 
-    = f.label :title
+    = f.label :題名
     = f.text_field :title, class: 'form_control', placeholder: "ここにタスク名を入力してください"
 
-    = f.label :content
+    = f.label :内容
     = f.text_area :content, class: 'form_control', placeholder: "ここにタスクの詳細を入力してください"
 
-    = f.label :start_at
+    = f.label :開始予定
     = f.datetime_select :start_at, ampm: :true, minute_step: 15, default: (Time.zone.now + 1.days), class: 'form_control'
 
-    = f.label :finish_at
+    = f.label :終了予定
     = f.datetime_select :finish_at, ampm: :true, minute_step: 15, default: (Time.zone.now + 2.days), class: 'form_control'
+
+    = f.label :所要時間
+    = f.collection_select :time_required, TimeRequired.all, :count, :time, {prompt: "--"}, class: 'form_control2'
 
     = f.submit '作成する'
 
@@ -36,4 +38,3 @@
         %th 状態
     %tbody.task_status
       = render @tasks
--# = render "shared/footer"

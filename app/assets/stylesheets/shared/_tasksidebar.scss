@@ -1,0 +1,42 @@
+.taskbar{
+  position: fixed;
+  right: 0px;
+  height: 450px;
+  width: 1200px;
+  z-index: 50;
+  right: -1200px;
+  background-color: rgba(52,87,117,0.4);
+  // background-color: rgba(0,0,0,1);
+  #open_close{
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    top: 60px;
+    left: -51px;
+    width: 52px;
+    height: 132px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    transform: rotate(180deg);
+  }
+  .taskbar_member{
+    font-size: 50px;
+    color: rgb(59, 59, 224);
+    display: flex;
+    white-space:nowrap;
+    overflow:scroll;
+    text-align: center;
+    .taskbar_content{
+      margin: 10px 10px 0px 10px;
+      height: 438px;
+      width: 600px;
+      .taskbar_member_index{
+        margin-bottom: 10px;
+        height: 100px;
+      }
+      .taskbar_piechart{
+        height: 100px;
+      }
+    }
+  }
+}

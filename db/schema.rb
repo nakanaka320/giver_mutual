@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_04_211636) do
+ActiveRecord::Schema.define(version: 2020_09_11_102948) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content", null: false
@@ -63,9 +63,15 @@ ActiveRecord::Schema.define(version: 2020_07_04_211636) do
     t.integer "kind", null: false
     t.boolean "finished", default: false, null: false
     t.bigint "member_id"
+    t.integer "time_required", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["member_id"], name: "index_tasks_on_member_id"
+  end
+
+  create_table "time_requireds", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "comments", "members"

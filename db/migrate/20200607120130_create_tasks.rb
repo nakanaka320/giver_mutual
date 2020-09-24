@@ -8,6 +8,7 @@ class CreateTasks < ActiveRecord::Migration[5.2]
       t.integer :kind, null: false
       t.boolean :finished, default: false, null: false
       t.references :member , foreign_key: true
+      t.integer :time_required, null: false
       t.timestamps
     end
   end

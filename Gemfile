@@ -67,6 +67,8 @@ gem 'devise'
 gem 'enum_help'
 gem 'bootstrap'
 gem 'rails-i18n'
+gem 'active_hash'
+gem 'jquery-rails'
 
 group :production do
   gem 'unicorn', '5.4.1'
