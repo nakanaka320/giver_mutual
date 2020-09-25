@@ -6,7 +6,6 @@
           = member.user_name
         .taskbar_piechart
           テスト文字
-          -# %canvas{id: "myChart#{member.id}",data: {member: {id: member.id}}}
           %canvas{id: "myChart#{index}",class: "chart", data: {id: member.id}}
   %button#open_close
-    = image_tag "btn_open.png"
+    = image_tag asset_path('btn_open.png')
