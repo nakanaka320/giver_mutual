@@ -6,7 +6,7 @@ $(document).on('click', '#open_close', function(){
       .on('click', function(){
           $aside.toggleClass('open');
           if($aside.hasClass('open')){
-              $aside.stop(true).animate({right: '-200px'}, duration, 'easeOutBack');
+              $aside.stop(true).animate({right: '0px'}, duration, 'easeOutBack');
               $asidButton.find('img').attr('src', '/assets/btn_close.png');
 // パイチャートの表示
               var NodeMyChart = document.querySelectorAll(".chart");

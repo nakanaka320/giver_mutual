@@ -63,10 +63,12 @@ ActiveRecord::Schema.define(version: 2020_09_11_102948) do
     t.integer "kind", null: false
     t.boolean "finished", default: false, null: false
     t.bigint "member_id"
+    t.bigint "room_id"
     t.integer "time_required", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["member_id"], name: "index_tasks_on_member_id"
+    t.index ["room_id"], name: "index_tasks_on_room_id"
   end
 
   create_table "time_requireds", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -80,4 +82,5 @@ ActiveRecord::Schema.define(version: 2020_09_11_102948) do
   add_foreign_key "messages", "members"
   add_foreign_key "messages", "rooms"
   add_foreign_key "tasks", "members"
+  add_foreign_key "tasks", "rooms"
 end
