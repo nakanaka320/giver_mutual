@@ -3,7 +3,9 @@ class TasksController < ApplicationController
   def index
     if member_signed_in?
       @task = Task.new
-      @tasks = Task.incoming.order(start_at: :asc)
+      # @tasks = Task.where('start_at > ?', Time.zone.now).order(start_at: :asc).find(current_member.tasks.ids)
+      @tasks = Task.find(current_member.tasks.ids)
+      
     else
       redirect_to root_path
       flash[:notice] = "会員登録をおこなってください"
@@ -25,6 +27,6 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:title, :content, :start_at, :finish_at, :kind, :finished, :time_required).merge(member_id: current_member.id)
+    params.require(:task).permit(:title, :content, :start_at, :finish_at, :kind, :finished, :time_required).merge(member_id: current_member.id, room_id: current_member.room.id)
   end
 end
