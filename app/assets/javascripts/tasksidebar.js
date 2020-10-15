@@ -13,15 +13,21 @@ $(document).on('click', '#open_close', function(){
               var HashMyChart = Array.from(NodeMyChart);
               var count = 0;
               var IndexChart = "#myChart";
-
-                HashMyChart.forEach(function(item,index){
-                new Chart(document.querySelector(IndexChart+count), {
+              var Individual = 56;
+              var Work = 26;
+              var Others = 88;
+              HashMyChart.forEach(function(item,index){
+                // ここにIndexChart+countでdata代入
+              // Individual;
+              // Work;
+              // Others;
+              new Chart(document.querySelector(IndexChart+count), {
                 type: "pie",
                 data: {
                   labels: ["仕事", "私用", "その他"],
                   datasets: [
                     {
-                      data: [300, 50, 100],
+                      data: [Individual, Work, Others],
                       backgroundColor: [
                         "rgb(255, 99, 132)",
                         "rgb(54, 162, 235)",
@@ -40,5 +46,3 @@ $(document).on('click', '#open_close', function(){
           };
       });
   });
-
-

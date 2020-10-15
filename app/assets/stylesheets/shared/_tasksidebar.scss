@@ -6,7 +6,6 @@
   z-index: 50;
   right: -1200px;
   background-color: rgba(52,87,117,0.4);
-  // background-color: rgba(0,0,0,1);
   #open_close{
     background-color: rgba(0,0,0,0.5);
     position: absolute;
@@ -32,10 +31,15 @@
       width: 600px;
       .taskbar_member_index{
         margin-bottom: 10px;
-        height: 100px;
       }
       .taskbar_piechart{
-        height: 100px;
+        .test{
+          position: relative;
+        }
+        .taskbar_taskindex{
+          font-size: 30px;
+          border: brown;
+        }
       }
     }
   }
