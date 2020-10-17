@@ -38,6 +38,12 @@
         .taskbar_taskindex{
           font-size: 30px;
           .taskbar_taskindex_content{
+            float: left;
+            text-align: center;
+          }
+          .taskbar_taskindex_kind{
+            text-align: center;
+          }
         }
       }
     }

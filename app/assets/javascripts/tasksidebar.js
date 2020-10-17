@@ -1,4 +1,4 @@
-// サイドバーの表示
+// // サイドバーの表示
 $(document).on('click', '#open_close', function(){
   var duration = 600;
   var $aside = $('.taskbar');
@@ -9,40 +9,32 @@ $(document).on('click', '#open_close', function(){
               $aside.stop(true).animate({right: '0px'}, duration, 'easeOutBack');
               $asidButton.find('img').attr('src', '/assets/btn_close.png');
 
-// タスクの種類を定義
-              var Individual = 50;
-              var Work = 20;
-              var Others = 80;
+// // タスクの種類を定義
+              var Individual = 1;
+              var Work = 1;
+              var Others = 1;
 
-// task-dataを読み取るまでの過程
-              var list = document.querySelectorAll('.taskbar_piechart_index')
-              var opts = list;
-              for (var i = 0, len = opts.length; i < len; i++){
-                var opt = opts.item(i);
-                if (opt.nodeType === 1){
-
-
-                  var test = opt.nextSibling; //optsと一緒
-
-                  console.log(test);
-                  var test2 = test.nextElementSibling;
-                  console.log(test2);
-                }
-              }
-
-// パイチャート表示部分の要素を定義
+// // パイチャート表示部分の要素を定義
               var NodeMyChart = document.querySelectorAll(".chart");
               var HashMyChart = Array.from(NodeMyChart);
-              var count = 0;
               var IndexChart = "#myChart";
 
-//チャート作成・表示
+// //チャート作成・表示
               HashMyChart.forEach(function(item,index){
-                // ここにIndexChart+countでdata代入
-              Individual;
-              Work;
-              Others;
-              new Chart(document.querySelector(IndexChart+count), {
+
+// // task-dataを読み取るまでの過程
+              var list = document.querySelectorAll('.taskbar_piechart');
+              var opt = list.item(index);
+              var taskbar_total = opt.querySelectorAll('.taskbar_taskindex');
+              var task_numbers = opt.children[0]; 
+              var i = 0;
+              while (i < taskbar_total.length){
+                  var data_task = task_numbers.nextElementSibling.getAttribute('data-task');
+                  task_numbers = task_numbers.nextSibling;
+                  console.log(data_task);
+                  i++;
+              }
+              new Chart(document.querySelector(IndexChart+index), {
                 type: "pie",
                 data: {
                   labels: ["仕事", "私用", "その他"],
@@ -58,7 +50,6 @@ $(document).on('click', '#open_close', function(){
                   ]
                 }
               });
-            count++;
             });
           }else{
               $aside.stop(true).animate({right: '-1200px'}, duration, 'easeInBack');
