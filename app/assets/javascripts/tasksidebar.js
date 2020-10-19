@@ -10,9 +10,9 @@ $(document).on('click', '#open_close', function(){
               $asidButton.find('img').attr('src', '/assets/btn_close.png');
 
 // // タスクの種類を定義
-              var Individual = 1;
-              var Work = 1;
-              var Others = 1;
+              var Individual = 0;
+              var Work = 0;
+              var Others = 0;
 
 // // パイチャート表示部分の要素を定義
               var NodeMyChart = document.querySelectorAll(".chart");
@@ -25,13 +25,23 @@ $(document).on('click', '#open_close', function(){
 // // task-dataを読み取るまでの過程
               var list = document.querySelectorAll('.taskbar_piechart');
               var opt = list.item(index);
-              var taskbar_total = opt.querySelectorAll('.taskbar_taskindex');
-              var task_numbers = opt.children[0]; 
+              var task_numbers = opt.children[0];
+
+              var taskbar_total = opt.querySelectorAll('.taskbar_taskindex');//処理の回数を取得するため
               var i = 0;
               while (i < taskbar_total.length){
+                //タスクデータを取得するまで
                   var data_task = task_numbers.nextElementSibling.getAttribute('data-task');
-                  task_numbers = task_numbers.nextSibling;
-                  console.log(data_task);
+                  task_numbers = task_numbers.nextElementSibling;
+
+                  //kindでーたを取得するところまで
+                  var kind_numbers = opt.children[i+1]; 
+                  var data_kind = kind_numbers.lastElementChild.innerHTML;
+                  kind_numbers = kind_numbers.nextElementSibling;
+                  //ここからスイッチ文
+
+
+
                   i++;
               }
               new Chart(document.querySelector(IndexChart+index), {
