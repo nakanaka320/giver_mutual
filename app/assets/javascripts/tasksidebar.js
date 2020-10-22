@@ -9,11 +9,6 @@ $(document).on('click', '#open_close', function(){
               $aside.stop(true).animate({right: '0px'}, duration, 'easeOutBack');
               $asidButton.find('img').attr('src', '/assets/btn_close.png');
 
-// // タスクの種類を定義
-              var Individual = 0;
-              var Work = 0;
-              var Others = 0;
-
 // // パイチャート表示部分の要素を定義
               var NodeMyChart = document.querySelectorAll(".chart");
               var HashMyChart = Array.from(NodeMyChart);
@@ -28,7 +23,11 @@ $(document).on('click', '#open_close', function(){
               var task_numbers = opt.children[0];
 
               var taskbar_total = opt.querySelectorAll('.taskbar_taskindex');//処理の回数を取得するため
-              var i = 0;
+              var i = 0
+
+              var Individual = 0;
+              var Work = 0;
+              var Others = 0;
               while (i < taskbar_total.length){
                 //タスクデータを取得するまで
                   var data_task = task_numbers.nextElementSibling.getAttribute('data-task');
@@ -36,18 +35,33 @@ $(document).on('click', '#open_close', function(){
 
                   //kindでーたを取得するところまで
                   var kind_numbers = opt.children[i+1]; 
-                  var data_kind = kind_numbers.lastElementChild.innerHTML;
+                  var data_kind = kind_numbers.lastElementChild.textContent;
                   kind_numbers = kind_numbers.nextElementSibling;
+
                   //ここからスイッチ文
+                  switch(data_kind.trim()){
 
+                    case "私用":
+                      Individual =+ data_task;
+                      break;
 
+                    case "仕事":
+                      Work =+ data_task;
+                      break;
 
+                    case "その他":
+                      Others =+ data_task;
+                      break;
+
+                    default:
+                      break;
+                  }
                   i++;
               }
               new Chart(document.querySelector(IndexChart+index), {
                 type: "pie",
                 data: {
-                  labels: ["仕事", "私用", "その他"],
+                  labels: ["私用", "仕事", "その他"],
                   datasets: [
                     {
                       data: [Individual, Work, Others],
