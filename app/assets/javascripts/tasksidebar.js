@@ -28,6 +28,7 @@ $(document).on('click', '#open_close', function(){
               var Individual = 0;
               var Work = 0;
               var Others = 0;
+
               while (i < taskbar_total.length){
                 //タスクデータを取得するまで
                   var data_task = task_numbers.nextElementSibling.getAttribute('data-task');
@@ -42,15 +43,15 @@ $(document).on('click', '#open_close', function(){
                   switch(data_kind.trim()){
 
                     case "私用":
-                      Individual =+ data_task;
+                      Individual += parseFloat(data_task);
                       break;
 
                     case "仕事":
-                      Work =+ data_task;
+                      Work += parseFloat(data_task);
                       break;
 
                     case "その他":
-                      Others =+ data_task;
+                      Others += parseFloat(data_task);
                       break;
 
                     default:
@@ -74,6 +75,9 @@ $(document).on('click', '#open_close', function(){
                   ]
                 }
               });
+              console.log(Individual);
+              console.log(Work);
+              console.log(Others);
             });
           }else{
               $aside.stop(true).animate({right: '-1200px'}, duration, 'easeInBack');
