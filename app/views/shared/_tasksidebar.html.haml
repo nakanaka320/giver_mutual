@@ -4,7 +4,14 @@
       .taskbar_content
         .taskbar_member_index
           = member.user_name
-        .taskbar_piechart
-          %canvas{id: "myChart#{index}",class: "chart", data: {id: member.id}}
+        .taskbar_piechart{data:{index: index}}
+          .taskbar_piechart_index
+            %canvas{id: "myChart#{index}",class: "chart"}
+          - member.tasks.each do |task|
+            .taskbar_taskindex{data:{task: task.time_required_was}, type: "hidden"}
+              .taskbar_taskindex_content
+                = task.content
+              .taskbar_taskindex_kind
+                = task.kind_i18n
   %button#open_close
     = image_tag asset_path('btn_open.png')

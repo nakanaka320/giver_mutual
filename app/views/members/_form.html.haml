@@ -5,7 +5,7 @@
     %th.form_input_box_label
       = f.label :名前
     %td.form_input_box_column
-      = f.text_field :user_name, autocomplete: "first_name_kanji", placeholder: "例) 中 光夫", class: "form-input-box"
+      = f.text_field :user_name, autocomplete: "first_name_kanji", placeholder: "例) 中 光夫", class: "form-input-box", autofocus: true
   %tr.form_input_box_content
     %th.form_input_box_label
       = f.label :メール

@@ -7,12 +7,6 @@ protect_from_forgery with: :exception
 private
 
 def configure_permitted_parameters
-  # devise_parameter_sanitizer.for(:sign_up){|u|
-  #   u.permit(:user_name, :password, :password_confirmation, :email,:administrator, :room_id)
-  # }
-  # devise_parameter_sanitizer.for(:sign_in){|u|
-  #   u.permit(:user_name, :password, :password_confirmation, :email,:administrator, :room_id)
-  # }
   devise_parameter_sanitizer.permit(:sign_up, keys: [:user_name, 
                                                      :email,
                                                      :password,

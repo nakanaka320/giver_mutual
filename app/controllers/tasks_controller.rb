@@ -3,7 +3,6 @@ class TasksController < ApplicationController
   def index
     if member_signed_in?
       @task = Task.new
-      # @tasks = Task.where('start_at > ?', Time.zone.now).order(start_at: :asc).find(current_member.tasks.ids)
       @tasks = Task.find(current_member.tasks.ids)
       
     else

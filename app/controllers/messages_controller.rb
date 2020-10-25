@@ -5,7 +5,7 @@ class MessagesController < ApplicationController
     @member = Member.new(id: :current_member)
     @message = Message.new
     @messages = @room.messages.includes(:member)
-
+    @tasks = Task.find(current_member.tasks.ids)
   end
 
   def make_message
