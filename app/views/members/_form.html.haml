@@ -5,27 +5,27 @@
     %th.form_input_box_label
       = f.label :名前
     %td.form_input_box_column
-      = f.text_field :user_name, autocomplete: "first_name_kanji", placeholder: "例) 中 光夫", class: "form-input-box", autofocus: true
+      = f.text_field :user_name, autocomplete: "first_name_kanji", placeholder: "例) 中 光夫", class: "form-input-box", id:"session_user_name", autofocus: true
   %tr.form_input_box_content
     %th.form_input_box_label
       = f.label :メール
     %td.form_input_box_column
-      = f.email_field :email, autofocus: true, placeholder: "例) PC・携帯どちらでも可"
+      = f.email_field :email,id:"session_email" , autofocus: true, placeholder: "例) PC・携帯どちらでも可"
   %tr.form_input_box_content
     %th.form_input_box_label
       = f.label :パスワード
     %td.form_input_box_column
-      = f.password_field :password, autocomplete: "new-password", placeholder: "6文字以上"
+      = f.password_field :password,id: "session_password" , autocomplete: "new-password", placeholder: "6文字以上"
   %tr.form_input_box_content
     %th.form_input_box_label
       = f.label :再度パスワード
     %td.form_input_box_column
-      = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "6文字以上"
+      = f.password_field :password_confirmation, id:"session_password_confirmation", autocomplete: "new-password", placeholder: "6文字以上"
   %tr.form_input_box_content
     %th.form_input_box_label
       = f.label :管理者権限
     %td.form_input_box_column
-      = f.check_box :administrator
+      = f.check_box :administrator,id: "session_administrator"
   %tr.form_input_box_content
     %th.form_input_box_label
       = f.label :所属チーム
