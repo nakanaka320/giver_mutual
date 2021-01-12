@@ -4,7 +4,6 @@ class TasksController < ApplicationController
     if member_signed_in?
       @task = Task.new
       @tasks = Task.find(current_member.tasks.ids)
-      
     else
       redirect_to root_path
       flash[:notice] = "会員登録をおこなってください"
