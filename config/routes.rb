@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     collection do
       post 'make_user' , to: 'members#make_user'
       get 'sign_in_form' , to:'members#sign_in_form'
+      post 'update_member' , to: 'members#update_member'
     end
   end
 

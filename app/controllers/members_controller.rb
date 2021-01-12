@@ -1,7 +1,12 @@
 class MembersController < ApplicationController
 
   def index
-    @members = Member.order("user_name")
+    if member_signed_in?
+      @members = Member.order("id")
+    else
+      redirect_to root_path
+      flash[:notice] = "会員登録をおこなってください"
+    end
   end
 
   def new
@@ -35,17 +40,23 @@ class MembersController < ApplicationController
     @member = Member.find(params[:id])
   end
 
-  # 今後実装　編集
-  # def edit
-  # end
+  def edit
+    @member = Member.find(params[:id])
+    if @member.id == current_member.id
+      @member
+    else
+      redirect_to member_path
+      flash[:notice] = "ログインIDが選択した人と異なっています。変更する権利はありません。"
+    end
+  end
 
-  # def update
-  #   if current_member.update(member_params)
-  #     redirect_to root_path
-  #   else
-  #     render :edit
-  #   end
-  # end
+  def update_member
+    if current_member.update(member_update_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
   
   def destroy
     @member = Member.find(params[:id])
@@ -59,6 +70,16 @@ class MembersController < ApplicationController
 
   private
   def member_params
+    params.require(:member).permit(
+      :user_name,
+      :password,
+      :password_confirmation,
+      :email,
+      :administrator,
+      :room_id )
+  end
+
+  def member_update_params
     params.require(:member).permit(
       :user_name,
       :password,
