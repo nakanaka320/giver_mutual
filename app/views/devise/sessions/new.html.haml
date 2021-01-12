@@ -1,0 +1,17 @@
+= render "shared/sideber"
+- @page_title = "ログイン"
+%h1= @page_title
+.form_input
+  = form_with model:@member, url: member_session_path, method: :post, local: true do |f|
+    %table.form_input_box
+      %tr.form_input_box_content
+        %th.form_input_box_label
+          = f.label :メール
+        %td.form_input_box_column
+          = f.email_field :email,id:"session_email" , autofocus: true, placeholder: "例) PC・携帯どちらでも可"
+      %tr.form_input_box_content
+        %th.form_input_box_label
+          = f.label :パスワード
+        %td.form_input_box_column
+          = f.password_field :password,id: "session_password" , autocomplete: "new-password", placeholder: "6文字以上"
+    = f.submit "完了"
