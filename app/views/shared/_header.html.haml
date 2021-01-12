@@ -8,7 +8,7 @@
           = link_to "ログアウト", destroy_member_session_path, method: :delete, data: { confirm: "ログアウトしますか？" } |
       - else
         .headbar_registration_login
-          = link_to "ログイン", sign_in_form_members_path
+          = link_to "ログイン",  new_member_session_path
     .headbar_manu
       %ul
         = link_to "TOP", :root
