@@ -16,3 +16,5 @@
       未完了
       %br
       = link_to "完了にする", task_path(task), method: :patch
+      |
+      = link_to "削除", task_destroy_id_tasks_path(task.id), method: :delete, data: { confirm: "本当に削除しますか?" }

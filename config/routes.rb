@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   resources :tasks do
     collection do
       post 'task_create' , to: 'tasks#task_create'
+      delete 'task_destroy/id', to: 'tasks#task_destroy'
     end
   end
 
