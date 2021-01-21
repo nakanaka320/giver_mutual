@@ -6,7 +6,7 @@ image_tag "//www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?248233
 
 <h2 align="center">Ramen Timer</h2>
 
-<p align="center">
+<p>
   <a href="vue公式サイトURL"><img src="https://〜.png" width="80px;" /></a>
   <br>
   <a href="PWA公式サイトURL"><img src="https://〜.png" height="45px;" /></a>
