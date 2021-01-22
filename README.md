@@ -23,4 +23,3 @@
 [![Image from Gyazo](https://i.gyazo.com/de0a3490279fdc2e22beededb9aeddeb.gif)](https://gyazo.com/de0a3490279fdc2e22beededb9aeddeb)
 ### 登録した後は、チャット画面右側のOPENラベルから円グラフで業務量が見ることが出来ます。
 
-ここでもで
