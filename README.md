@@ -1,8 +1,8 @@
 # README
 
 ## 業務改善アプリ
-[![Image from Gyazo](https://i.gyazo.com/484d34016d2881cf8d4df1c678a2e384.gif)](https://gyazo.com/484d34016d2881cf8d4df1c678a2e384)
+[![Image from Gyazo](https://i.gyazo.com/2972eb172ee289e8542366ca3f2ee253.gif)](https://gyazo.com/2972eb172ee289e8542366ca3f2ee253)
 
-<div align="center">
-<img src="https://i.gyazo.com/484d34016d2881cf8d4df1c678a2e384.gif" alt="属性" title="タイトル">
-</div>
+### このアプリは自分が働いていた職場の、業務を改善させるために考えたアプリです。
+### 個々人の業務を円グラフで表示することでチーム全体の業務量を把握することで、チャットを通じてお互いにフォローすることを目的としています。
+

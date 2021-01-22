@@ -1,12 +1,7 @@
 class MembersController < ApplicationController
 
   def index
-    if member_signed_in?
-      @members = Member.order("id")
-    else
-      redirect_to root_path
-      flash[:notice] = "会員登録をおこなってください"
-    end
+    @members = Member.order("id")
   end
 
   def new
@@ -37,7 +32,12 @@ class MembersController < ApplicationController
   end
 
   def show
-    @member = Member.find(params[:id])
+    if member_signed_in?
+      @member = Member.find(params[:id])
+        else
+      redirect_to root_path
+      flash[:notice] = "会員登録をおこなってください"
+    end
   end
 
   def edit
