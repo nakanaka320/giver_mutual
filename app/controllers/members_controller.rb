@@ -34,7 +34,7 @@ class MembersController < ApplicationController
   def show
     if member_signed_in?
       @member = Member.find(params[:id])
-        else
+    else
       redirect_to root_path
       flash[:notice] = "会員登録をおこなってください"
     end
@@ -42,7 +42,8 @@ class MembersController < ApplicationController
 
   def edit
     @member = Member.find(params[:id])
-    if @member.id == current_member.id
+    # binding.pry
+    if member_signed_in? && @member.id == current_member.id
       @member
     else
       redirect_to member_path
