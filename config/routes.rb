@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root "rooms#index"
   resource :room do
     resources :messages do
-      post 'make_message', to:'messages#make_message'
+      post 'make_message', to:'messages#make_message', defaults: { format: 'json' }
     end
     collection do
       get 'about'

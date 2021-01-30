@@ -10,8 +10,13 @@ class MessagesController < ApplicationController
 
   def make_message
     @message = @room.messages.new(message_params)
+    # binding.pry
     if @message.save
-      render :index
+      respond_to do |format|
+        format.html
+        format.json
+        render :index
+      end
     else
       @messages = @room.messages.includes(:member)
       flash.now[:alert] = 'メッセージを入力してください。'
