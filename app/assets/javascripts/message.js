@@ -1,14 +1,28 @@
 $(function(){
+  function buildHTML(message) {
+    var html = `<div class="chat_message_index_list_index">
+                  <div class="chat_message_index_list_value">
+                    <div class="chat_message_index_list_index_name">
+                      ${message.member_id}
+                    </div>
+                    <div class="chat_message_index_list_index_time">
+                      ${message.created_at}
+                    </div>
+                  </div>
+                  <div class="chat_message_index_list_index_content">
+                    ${message.content}
+                  </div>
+                </div>`
+    return html;
+              };
   $('#create_massage').on('submit', function(e){
     e.preventDefault();
 
-    var formData = new FormData();
+    var formData = new FormData(this);
     var url = $(this).attr('action');
-    // for(item of formData) console.log(item);
-    // console.log();
 
     $.ajax({
-      url: '/room/messages/:message_id/make_message',
+      url: url,
       type: 'POST',
       data: formData,
       dataType: 'json',
@@ -16,7 +30,9 @@ $(function(){
       contentType: false
     })
     .done(function(data) {
-      console.log(出来ている);
+      var html = buildHTML(data);
+      $('.chat_message_index_list').append(html);
+      console.log('成功');
     })
     .fail(function(){
       alert('error');

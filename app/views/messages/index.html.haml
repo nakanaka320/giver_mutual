@@ -15,8 +15,8 @@
           .chat_message_index_list_index_content
             = message.content
     .chat_message_input
-      .chat_message_input_form{id: :"create_massage"}
-        = form_with model: [@room,@message], url: room_message_make_message_path(current_member.id), method: :post, local: true do |f|
+      .chat_message_input_form
+        = form_with model: [@room,@message], id: 'create_massage',url: room_message_make_message_path(current_member.id), method: :post, local: true do |f|
           .chat_message_input_form_box
             = f.text_field :content, class: 'chat_message_input_form_box', placeholder: 'type a message', autofocus: true
             = f.submit 'Send', class: 'chat_message_input_send'
