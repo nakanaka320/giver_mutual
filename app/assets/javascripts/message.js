@@ -22,7 +22,7 @@ $(function(){
       var formData = new FormData(this);
       console.log(formData);
       var url = $(this).attr('action');
-    //  debugger;
+
       $.ajax({
         url: url,
         type: 'POST',

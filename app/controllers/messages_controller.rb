@@ -2,19 +2,14 @@ class MessagesController < ApplicationController
   before_action :set_room
 
   def index
-    # @member = Member.find(session[:current_member.id])
     @message = Message.new
     @messages = @room.messages.includes(:member)
-    # @test = @room.messages.includes(:current_member)
-    # @tasks = Task.find(current_member.tasks.ids)
-    # @test = Meesage.member_id
-    # binding.pry
+
   end
 
   def make_message
     @message = @room.messages.new(message_params)
-    # binding.pry
-    # binding.pry
+
     if @message.save
       respond_to do |format|
         format.html{ redirect_to group_messages_path(@room), notice: 'メッセージが送信されました' }
