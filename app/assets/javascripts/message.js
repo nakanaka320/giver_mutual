@@ -15,30 +15,28 @@ $(function(){
                 </div>`
     return html;
               };
-  $(document).on('turbolinks:load', function(){
-    $('#create_massage').on('submit', function(e){
-      e.preventDefault();
-      
-      var formData = new FormData(this);
-      console.log(formData);
-      var url = $(this).attr('action');
+  $('#create_massage').on('submit', function(e){
+    e.preventDefault();
+    
+    var formData = new FormData(this);
+    console.log(formData);
+    var url = $(this).attr('action');
 
-      $.ajax({
-        url: url,
-        type: 'POST',
-        data: formData,
-        dataType: 'json',
-        processData: false,
-        contentType: false
-      })
-      .done(function(data) {
-        var html = buildHTML(data);
-        $('.chat_message_index_list').append(html);
-        console.log(data);
-      })
-      .fail(function(){
-        alert('error');
-      })
+    $.ajax({
+      url: url,
+      type: 'POST',
+      data: formData,
+      dataType: 'json',
+      processData: false,
+      contentType: false
+    })
+    .done(function(data) {
+      var html = buildHTML(data);
+      $('.chat_message_index_list').append(html);
+      console.log(data);
+    })
+    .fail(function(){
+      alert('error');
     })
   });
 });
