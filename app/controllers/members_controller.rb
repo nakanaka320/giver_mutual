@@ -42,7 +42,6 @@ class MembersController < ApplicationController
 
   def edit
     @member = Member.find(params[:id])
-    # binding.pry
     if member_signed_in? && @member.id == current_member.id
       @member
     else
