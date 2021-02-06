@@ -42,7 +42,6 @@ class MembersController < ApplicationController
 
   def edit
     @member = Member.find(params[:id])
-    # binding.pry
     if member_signed_in? && @member.id == current_member.id
       @member
     else
@@ -61,6 +60,7 @@ class MembersController < ApplicationController
   
   def destroy
     @member = Member.find(params[:id])
+    # binding.pry
     @member.destroy
     redirect_to :members, notice: "会員を削除しました"
   end
