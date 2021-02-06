@@ -75,9 +75,7 @@ $(document).on('click', '#open_close', function(){
                   ]
                 }
               });
-              console.log(Individual);
-              console.log(Work);
-              console.log(Others);
+
             });
           }else{
               $aside.stop(true).animate({right: '-1200px'}, duration, 'easeInBack');

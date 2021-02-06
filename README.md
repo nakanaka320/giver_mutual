@@ -15,32 +15,64 @@
 ***デモ・及び使い方***
 # このアプリの操作
 [![Image from Gyazo](https://i.gyazo.com/36b6238cd2889a0c88fc5a01503c3f5d.gif)](https://gyazo.com/36b6238cd2889a0c88fc5a01503c3f5d)
-
+#### 会員の新規登録・ログイン機能
 - まずは会員登録から新規会員に移ります。そこでアカウントを作成します。この時の所属チームがチャットのメンバーになります。
+新規登録、もしくはログインが済んだら本アプリの機能はすべて使えるようになります。
 
 [![Image from Gyazo](https://i.gyazo.com/bbd7bb550e81e542e90942caecbd4874.gif)](https://gyazo.com/bbd7bb550e81e542e90942caecbd4874)
 - 会員登録した後は業務登録にて業務の登録を行います。
+#### タスク管理機能 
+- この時の所要時間に記載する時間をもとにグラフで業務を可視化できるようにしています
 
 [![Image from Gyazo](https://i.gyazo.com/de0a3490279fdc2e22beededb9aeddeb.gif)](https://gyazo.com/de0a3490279fdc2e22beededb9aeddeb)
-- 登録した後は、チャット画面右側のOPENラベルから円グラフで業務量を見ることが出来ます。
+[![Image from Gyazo](https://i.gyazo.com/16830aba0a2da900705ca8fdd5bcb3de.gif)](https://gyazo.com/16830aba0a2da900705ca8fdd5bcb3de)
+#### グラフ表記による仕事量の可視化
+#### マウスオーバーによる合計の作業時間お表記。
+#### またグラフ上の私用・仕事・その他をそれぞれクリックするとグラフが変化します。
+- この機能を用いてお互いの業務を管理、チームリーダーなども新しい業務の振り分けの際に利用できる
 
+[![Image from Gyazo](https://i.gyazo.com/9de3f011a6acd1df00e3c96fa3520bff.gif)](https://gyazo.com/9de3f011a6acd1df00e3c96fa3520bff)
+#### チャット機能の実装（Ajax使用）
+- 相手の状況を把握したチャットが行えるため、最低限のチャットで業務分担が行なえます。
 
-- 登録した業務は完了にも出来ます。
+[![Image from Gyazo](https://i.gyazo.com/667dc46c730d9d7667c8823a31883e64.gif)](https://gyazo.com/667dc46c730d9d7667c8823a31883e64)
+##### タスクの削除・完了機能
 
 [![Image from Gyazo](https://i.gyazo.com/9b85e358e8e274172bdfb0f48d1d527e.gif)](https://gyazo.com/9b85e358e8e274172bdfb0f48d1d527e)
-- 編集機能
+#### ユーザー情報の編集機能
 
 [![Image from Gyazo](https://i.gyazo.com/cf61124d685a84520d1f78d58b1741e0.gif)](https://gyazo.com/cf61124d685a84520d1f78d58b1741e0)
-- 削除機能
+#### ユーザーの削除機能
 
+# 使用技術（開発環境）
 
+## バックエンド
+Ruby on Rails
 
-# 機能
- 
-- 機能1 自身のタスク管理
-- 機能2 他人のタスクを円グラフで直感的に理解できる
-- 機能3 相手の状況を把握した上でコミュニケーションを行える
- 
+## フロントエンド
+Haml,sass javascript, JQuery, Ajax
+
+## インフラ
+AWS, Capistarano
+
+## Webサーバ
+nginx
+
+## アプリケーションサーバ
+Unicorn
+
+## ソース管理
+Github, GitHubDesktop
+## テスト
+Rspec（フィーチャースペック,factories使用）
+## エディタ
+VSCode
+
+# 今後実装したい機能
+・dockerによる仮想化環境の作成
+・一日の業務を保存、データの集積など行えるように
+・掲示板機能の実装
+
 # インストール
 
 git clone https://github.com/nakanaka320/giver_mutual.git
