@@ -1,0 +1,19 @@
+ja:
+  activerecord:
+    models:
+      member:
+      task:
+    attributes:
+      member:
+        user_name: 名前
+        created_at: 登録日時
+        updated_at: 更新日時
+        birthday: 生年月日
+        email: メールアドレス
+        salon_id: サロン
+        password: パスワード
+        room: 所属チーム
+      task:
+        content: 内容
+        title: 題名
+        time_required: 所要時間

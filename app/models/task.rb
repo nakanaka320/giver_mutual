@@ -5,6 +5,7 @@ class Task < ApplicationRecord
   validates :title, presence: true
   validates :kind, presence: true
   validates :time_required, presence: true
+  validates :content, presence: true
 
   enum kind: {individual: 0, work: 1, others: 2}
 
