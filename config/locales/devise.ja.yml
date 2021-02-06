@@ -368,5 +368,6 @@ ja:
       less_than_or_equal_to: "は{{count}}以下の値を指定してください。"
       odd: "は奇数を指定してください。"
       even: "は偶数を指定してください。"
+      user_name: "名前"
 
 

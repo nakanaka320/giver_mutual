@@ -1,5 +1,9 @@
 ---
 ja:
+  activerecord:
+    attributes:
+      member:
+        room: 名前
   enums:
     task:
       kind:
