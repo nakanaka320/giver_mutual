@@ -27,7 +27,7 @@
 [![Image from Gyazo](https://i.gyazo.com/de0a3490279fdc2e22beededb9aeddeb.gif)](https://gyazo.com/de0a3490279fdc2e22beededb9aeddeb)
 [![Image from Gyazo](https://i.gyazo.com/16830aba0a2da900705ca8fdd5bcb3de.gif)](https://gyazo.com/16830aba0a2da900705ca8fdd5bcb3de)
 #### グラフ表記による仕事量の可視化
-#### マウスオーバーによる合計の作業時間お表記。
+#### マウスオーバーによる合計作業時間の表記。
 #### またグラフ上の私用・仕事・その他をそれぞれクリックするとグラフが変化します。
 - この機能を用いてお互いの業務を管理、チームリーダーなども新しい業務の振り分けの際に利用できる
 
@@ -83,7 +83,7 @@ git clone https://github.com/nakanaka320/giver_mutual.git
  
 # ライセンス
  
-[MIT](http://github.com/nakanaka320.mit-license.org)</blockquote>
+[MIT](http://github.com/nakanaka320.mit-license.org)
 
 
 # DB設計
