@@ -5,9 +5,9 @@ class Member < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   belongs_to :room
-  has_many :tasks
+  has_many :tasks, foreign_key: :member_id, dependent: :destroy
   has_many :comments,dependent: :destroy
-  has_many :messages
+  has_many :messages, foreign_key: :member_id, dependent: :destroy
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :user_name, presence: true, format: {with: /\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々])+\z/}

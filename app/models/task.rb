@@ -1,5 +1,5 @@
 class Task < ApplicationRecord
-  belongs_to :member
+  belongs_to :member, dependent: :destroy
   belongs_to :room
 
   validates :title, presence: true

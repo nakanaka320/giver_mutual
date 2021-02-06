@@ -6,6 +6,10 @@ RUN apt-get update -qq && \
                        libpq-dev \        
                        nodejs           
 
+ENV LANG C.UTF-8
+# timezoneを日本に変更
+RUN unlink /etc/localtime && \
+    ln -s /usr/share/zoneinfo/Japan /etc/localtime
 # 作業ディレクトリの作成、設定
 RUN mkdir /app_name 
 ##作業ディレクトリ名をAPP_ROOTに割り当てて、以下$APP_ROOTで参照
