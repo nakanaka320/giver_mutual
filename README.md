@@ -53,7 +53,7 @@ Ruby on Rails
 Haml,sass javascript, JQuery, Ajax
 
 ## インフラ
-AWS, Capistarano
+AWS(EC2), Capistarano
 
 ## Webサーバ
 nginx
@@ -81,10 +81,6 @@ git clone https://github.com/nakanaka320/giver_mutual.git
  
 [nakanaka320] mail to: nakanakamitsuo@icloud.com
  
-# ライセンス
- 
-[MIT](http://github.com/nakanaka320.mit-license.org)
-
 
 # DB設計
 ## memberテーブル
