@@ -1,7 +1,8 @@
 .task_title{style: :"background-color: #e3f2fd;" }
   .task_title_index 
     登録済みタスク一覧
-
+.error_messages_box
+  = render "shared/errors",obj: @task
 .form_wrapper
   = form_for @task, url: task_create_tasks_path, html: {class: 'form_group'} do |f|
 

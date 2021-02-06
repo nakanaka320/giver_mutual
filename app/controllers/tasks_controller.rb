@@ -12,8 +12,15 @@ class TasksController < ApplicationController
 
   def task_create
     @task = Task.new(task_params)
-    @task.save
-    redirect_to tasks_path
+    if @task.save
+       redirect_to tasks_path
+    else
+      flash.now[:alert] = '登録に失敗しました'
+      @tasks = Task.find(current_member.tasks.ids)
+      @task.errors.messages
+      render :index
+    end
+
   end
 
   def update

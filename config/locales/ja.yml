@@ -4,6 +4,9 @@ ja:
     attributes:
       member:
         room: 名前
+        task:
+          content: 内容
+          title: 題名
   enums:
     task:
       kind:
@@ -119,6 +122,7 @@ ja:
   errors:
     format: "%{attribute}%{message}"
     messages:
+      Content: 内容を入力してください
       accepted: を受諾してください
       blank: を入力してください
       present: は入力しないでください
