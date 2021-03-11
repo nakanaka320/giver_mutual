@@ -60,3 +60,12 @@ services:
       - 80:80
     depends_on:
       - app
+
+#volumesはDockerを落としても　データを残すファイルを指定
+volumes:
+  db-data:
+  bundle-data:
+  bundle:
+  public:
+  tmp:
+  log:
