@@ -44,6 +44,8 @@ RUN mkdir /$APP_ROOT && \
     mkdir /$APP_ROOT/log && \
     mkdir -p /$APP_ROOT/tmp/sockets /$APP_ROOT/tmp/pids
 #Docker-container上での作業する場所の指定
+
+##rails ってダウンロードしてる？
 WORKDIR /$APP_ROOT
 
 COPY Gemfile /$APP_ROOT
